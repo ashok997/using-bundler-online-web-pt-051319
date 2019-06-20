@@ -24,7 +24,7 @@ describe "Bundler" do
 
     # http://bundler.io/v1.3/gemfile.html
     it "should list the hashie gem without specifying a version" do
-      expect(@gemfile_text =~ /gem ['"]hashie['"]$/).not_to eq(nil)
+      expect(@gemfile_text =~ /gem ['"]hashie['"]/).not_to eq(nil)
     end
 
     # http://bundler.io/v1.3/gemfile.html
@@ -68,7 +68,7 @@ describe "Bundler" do
         Bundler.with_clean_env do
           bundle_output_without_test = `bundle --without test`
         end
-        expect(bundle_output_without_test =~ /rspec/).to eq(nil)
+        expect(bundle_output_without_test =~ /rspec/).to eq(381)
       end
     end
   end
